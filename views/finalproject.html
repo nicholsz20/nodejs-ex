@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB-115 Final Project</title>
+    <link rel="stylesheet" href="projectstyle.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <h1 class="Heading">Build Your Resume</h1>
+            <div class="form">
+                <div class="form-element">
+                    <label for="name">Enter your full name</label>
+                    <input type="text" name="name" id="name" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="city">Enter your city</label>
+                    <input type="text" name="city" id="city" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="state">Enter your state</label>
+                    <input type="text" name="state" id="state" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="zip">Enter your zip code</label>
+                    <input type="number" name="zip" id="zip" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="Pnum">Enter your phone no.</label>
+                    <input type="number" name="Pnum" id="Pnum" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="Email">Enter your email</label>
+                    <input type="email" name="Email" id="Email" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="social_media">Social Media Links</label>
+                    <textarea name="social_media" id="social_media" row="3" required></textarea></br>
+                </div>
+                <div class="form-element">
+                    <label for="skills">Skills</label>
+                    <select name="skills" id="skills">
+                        <option value="Coding">Coding skills</option>
+                        <option value="Work ethic">Work ethic</option>
+                        <option value="Writing">Writing skills</option>
+                    </select></br>
+                </div>
+                <div class="form-element">
+                    <label for="tech-skills">Technical Skills</label>
+                    <select name="skills" id="skills">
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value=" "></option>
+                    </select></br>
+                </div>
+                <div class="form-element">
+                    <label for="education">Education</label>
+                    <input type="text" name="education" id="education" required></br>
+                </div>
+
+                <h2 class="Heading">Enter last job dates</h2>
+
+                <div class="form-element">
+                    <label for="entry-date">Entry Date</label>
+                    <input type="date" name="entry-date" id="entry-date" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="last-date">Last Date</label>
+                    <input type="date" name="last-date" id="last-date" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="education">Description</label>
+                    <input type="text" name="Description" id="Description" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="entry-date">Entry Date</label>
+                    <input type="date" name="entry-date" id="entry-date" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="last-date">Last Date</label>
+                    <input type="date" name="last-date" id="last-date" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="education">Description</label>
+                    <input type="text" name="Description" id="Description" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="entry-date">Entry Date</label>
+                    <input type="date" name="entry-date" id="entry-date" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="last-date">Last Date</label>
+                    <input type="date" name="last-date" id="last-date" required></br>
+                </div>
+                <div class="form-element">
+                    <label for="education">Description</label>
+                    <input type="text" name="Description" id="Description" required></br>
+                </div>
+                <div class="buttons">
+                    <button type="submit" onclick="build()" class="Build-button">Create Resume</button>
+                    <button type="reset" onclick = "reset()" class="reset">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div class="entry-table">
+            <h1>Resume</h1>
+            <table></table>
+        </div>
+    </div>
+    <script src="projectJS.js"></script>
+</body>
+</html>
