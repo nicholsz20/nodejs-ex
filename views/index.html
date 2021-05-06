@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEB-115 Final Project</title>
-    <link rel="stylesheet" href="projectstyle.css">
+    <title>Resume Creator</title>
+    <link rel="stylesheet" href="https://github.com/pdatta1/nodejs-ex/blob/master/views/projectstyle.css">
 </head>
 <body>
     <div class="main-container">
@@ -110,6 +110,150 @@
             <table></table>
         </div>
     </div>
-    <script src="projectJS.js"></script>
+    <script>
+
+let inputs = document.querySelectorAll("input") ;
+let textarea = document.querySelector("textarea") ;
+let formElement = document.querySelectorAll(".form-element");
+let formContainer = document.querySelector(".form-container");
+let table = document.querySelector(".entry-table table");
+
+function reset(){
+    textarea.value =  "" ;
+
+    for(var i = 0 ; i < inputs.length ; i++){
+        inputs[i].value = "" ;
+    }
+}
+
+let isInvalid = false ;
+let inErr = new Array();
+
+function build(){
+    for(var i = 0 ; i < inputs.length ; i++){
+        if(inputs[i].value == "" || inputs[i].value == " " )
+        {
+            isInvalid = true ;
+            inErr.push(i) ;
+        }
+    }
+    if(textarea == " " || textarea == ""){
+        isInvalid = true ;
+    }
+
+    if(isInvalid == false){
+        var html = '' ;
+        formElement.forEach((e) => {
+            html += '<tr class="row-table"><td class="key">' + e.children[0].innerText + '</td><td>' + e.children[1].value + '</td></tr>' ;
+        });
+
+        formContainer.style.display = "none" ;
+
+        table.parentElement.style.display = "flex" ;
+
+        table.innerHTML = html ;
+    }
+    else{
+        var str = '[ ' ;
+        inErr.forEach((e) => {
+            console.log(e);
+            str += inputs[e].previousElementSibling.innerText + ", ";
+        });
+
+        str += ' ]' ;
+        alert("Invalid Input in " + str );
+        isInvalid = false ;
+        inErr = [] ;
+    }
+}
+</script>
+<style>
+    * {
+    padding: 0px;
+    font-family: monospace;
+}
+
+body {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+
+.form{
+    width: 20vw;
+}
+
+.form-element{
+    padding :8px 0px ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form-element label{
+    font-weight: 600;
+    font-size: large;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.buttons button {
+    padding: 5px 10px;
+    background-color: rgb(111, 255, 0);
+    border: none;
+}
+
+.buttons .reset {
+    background-color: rgb(250, 73, 73);
+}
+
+.entry-table{
+    display: none;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+.entry-table h1{
+    text-decoration: underline;
+    font-size: 40px;
+}
+.entry-table table{
+    width: 50vw;
+    font-size: 20px;
+    text-align: left;
+}
+tr:nth-child(odd){
+    background-color: #f2f2f2;
+}
+tr.row-table{
+    padding: 30px;
+    margin-bottom: 20px;
+}
+.key{
+    font-weight: 600;
+}
+
+td {
+    padding: 8px;
+}
+</style>
 </body>
 </html>
